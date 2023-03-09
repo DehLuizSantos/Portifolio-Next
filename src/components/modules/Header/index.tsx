@@ -1,42 +1,32 @@
-import React, { useCallback, useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import * as S from './styles';
 import Logo from '/public/Logo.svg';
 import Image from 'next/image';
 import Hamburguer from '@/components/atomos/Hamburguer';
-import MenuOpen from '@/components/atomos/MenuOpen';
+import { motion, useCycle } from 'framer-motion';
+import { Navigation } from '@/components/atomos/Navigation';
+import { useDimensions } from './dimencions';
+import { headerList } from './mocks';
 
-type MenuProps = {
-  open: boolean;
-  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
-};
+const Header: React.FC = () => {
+  const [open, setOpen] = useCycle(false, true);
 
-const Header: React.FC<MenuProps> = ({ setOpen, open }) => {
-  const headerList = [
-    {
-      item: 'Home',
-      src: '/',
-    },
-    {
-      item: 'About',
-      src: '/',
-    },
-    {
-      item: 'Projects',
-      src: '/',
-    },
-    {
-      item: 'Blog',
-      src: '/',
-    },
-  ];
-
-  console.log(open);
+  const containerRef = useRef(null);
+  const { height } = useDimensions(containerRef);
 
   return (
     <S.ContainerHeader>
       <Image src={Logo} alt={'logo'} />
-      <Hamburguer onClick={() => setOpen(!open)} open={open} />
-      <MenuOpen open={open} />
+      <motion.nav
+        initial={false}
+        animate={open ? 'open' : 'closed'}
+        custom={height}
+        ref={containerRef}
+      >
+        <Hamburguer setOpen={() => setOpen()} />
+
+        <Navigation open={open} />
+      </motion.nav>
 
       <S.ListItems>
         {headerList.map((item, index) => (

@@ -4,7 +4,7 @@ export const ContainerHeader = styled.header`
   ${({ theme }) => css`
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    padding: 0 5vw;
     height: 75px;
     background-color: ${theme.colors.purple['400']};
     box-shadow: 0 0 1em .25em ${theme.colors.purple['400']},
@@ -19,6 +19,16 @@ export const ContainerHeader = styled.header`
         0 0 4em 2em ${theme.colors.purple['400']},
        inset 0 0 .75em .25em ${theme.colors.purple['400']};          
       }
+
+
+    .background{
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 300px;
+      background: #fff;
+    }
+
   `}
 `;
 
