@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import * as S from './styles';
 import Logo from '/public/Logo.svg';
 import Image from 'next/image';
 import Hamburguer from '@/components/atomos/Hamburguer';
 import MenuOpen from '@/components/atomos/MenuOpen';
 
-const Header: React.FC = () => {
-  const [open, setOpen] = useState(false);
+type MenuProps = {
+  open: boolean;
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const Header: React.FC<MenuProps> = ({ setOpen, open }) => {
   const headerList = [
     {
       item: 'Home',
@@ -25,11 +29,13 @@ const Header: React.FC = () => {
       src: '/',
     },
   ];
+
+  console.log(open);
+
   return (
     <S.ContainerHeader>
       <Image src={Logo} alt={'logo'} />
-      <Hamburguer onClick={() => setOpen(!open)} />
-
+      <Hamburguer onClick={() => setOpen(!open)} open={open} />
       <MenuOpen open={open} />
 
       <S.ListItems>

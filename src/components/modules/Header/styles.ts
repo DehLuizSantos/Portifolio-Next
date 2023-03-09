@@ -18,7 +18,8 @@ export const ContainerHeader = styled.header`
       box-shadow: 0 0 1em .25em ${theme.colors.purple['500']},
         0 0 4em 2em ${theme.colors.purple['400']},
        inset 0 0 .75em .25em ${theme.colors.purple['400']};          
-    `}
+      }
+  `}
 `;
 
 export const ListItems = styled.ul`

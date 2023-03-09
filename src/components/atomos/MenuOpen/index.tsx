@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import * as S from './styles';
 
-export type MenuOpenProps = {
+type MenuOpenProps = {
   open: boolean;
 };
 

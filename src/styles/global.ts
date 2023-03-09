@@ -12,6 +12,8 @@ export const GlobalStyle = createGlobalStyle`
     transition: all 0.3s;
   }
 
+
+
   a {
     text-decoration: none;
     cursor: pointer;
