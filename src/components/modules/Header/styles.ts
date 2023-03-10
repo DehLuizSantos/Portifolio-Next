@@ -2,14 +2,15 @@ import styled, { css } from 'styled-components';
 
 export const ContainerHeader = styled.header`
   ${({ theme }) => css`
-    display: flex;
     align-items: center;
-    padding: 0 5vw;
-    height: 75px;
     background-color: ${theme.colors.purple['400']};
     box-shadow: 0 0 1em .25em ${theme.colors.purple['400']},
         0 0 4em 1em ${theme.colors.purple['600']};,
         inset 0 0 .75em .25em ${theme.colors.purple['400']};
+    display: flex;
+    height: 75px;
+    justify-content: space-between;
+    padding: 0 5vw;
     text-shadow: 0 0 .5em ${theme.colors.purple['400']};
     position: relative;
     transition: all 0.3s;   
@@ -18,17 +19,7 @@ export const ContainerHeader = styled.header`
       box-shadow: 0 0 1em .25em ${theme.colors.purple['500']},
         0 0 4em 2em ${theme.colors.purple['400']},
        inset 0 0 .75em .25em ${theme.colors.purple['400']};          
-      }
-
-
-    .background{
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 300px;
-      background: #fff;
-    }
-
+      } 
   `}
 `;
 

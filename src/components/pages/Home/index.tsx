@@ -1,19 +1,23 @@
-import { Title } from '@/components/atomos/Title';
+import { PresentationPhoto } from '@/components/molecules/PresentationPhoto';
+import { PresentationSocialMedia } from '@/components/molecules/PresentationSocialMedia';
 import Head from 'next/head';
-import { FaGithub } from 'react-icons/fa';
-import { Wrapper } from './styles';
+import * as S from './styles';
 
 export const Home = () => {
   return (
-    <Wrapper>
+    <>
       <Head>
-        <title>Portifolio André Santos</title>
-        <meta
-          name="description"
-          content="Next App boilerplate, typescript + eslint + prettier + editorconfig + jest + styled-components"
-        />
-        <link rel="icon" href="/favicon.ico" />
+        <title>Portifolio André Home</title>
+        <meta name="description" content="Portifólio André Developer" />
+        <link rel="icon" href="/Logo.svg" />
       </Head>
-    </Wrapper>
+      <S.HomeContainer>
+        <div className="wave"></div>
+        <div className="wave"></div>
+        <div className="wave"></div>
+        <PresentationPhoto />
+        <PresentationSocialMedia />
+      </S.HomeContainer>
+    </>
   );
 };

@@ -7,6 +7,7 @@ import { motion, useCycle } from 'framer-motion';
 import { Navigation } from '@/components/atomos/Navigation';
 import { useDimensions } from './dimencions';
 import { headerList } from './mocks';
+import Link from 'next/link';
 
 const Header: React.FC = () => {
   const [open, setOpen] = useCycle(false, true);
@@ -16,7 +17,11 @@ const Header: React.FC = () => {
 
   return (
     <S.ContainerHeader>
-      <Image src={Logo} alt={'logo'} />
+      <Link href={'/'} passHref>
+        <a>
+          <Image src={Logo} alt={'logo'} />
+        </a>
+      </Link>
       <motion.nav
         initial={false}
         animate={open ? 'open' : 'closed'}
