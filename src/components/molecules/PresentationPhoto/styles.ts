@@ -1,32 +1,47 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
+
+const typing = keyframes`
+  from { width: 0 }
+  to { width: 100% }
+`;
+
+const blinkCaret = keyframes`
+   from, to { border-color: transparent }
+  50% { border-color: orange }
+`;
 
 export const PresentationPhotoContainer = styled.div`
-  ${() => css`
-    width: 100%;
-    padding: 40px 5vw;
+  ${({ theme }) => css`
+    padding-top: 40px;
+
+    ${theme.responsive.tablet(css`
+      padding-top: 0;
+    `)}
   `}
 `;
 
 export const ContainerTitle = styled.div`
   ${({ theme }) => css`
-    width: 300px;
-    height: 390px;
-    border: 2px solid ${theme.colors.black};
-    padding: 20px;
-    background-color: ${theme.colors.purple['600']};
-    position: absolute;
-    border-radius: 5px;
+    margin: 10px auto;
+    text-align: center;
+
+    h3 {
+      overflow: hidden;
+      border-right: 0.15em solid orange;
+      white-space: nowrap;
+      margin: 0 auto;
+      letter-spacing: 0.15em;
+      animation: ${typing} 3.5s steps(30, end),
+        ${blinkCaret} 0.5s step-end infinite;
+    }
   `}
 `;
 
 export const ContainerPhoto = styled.div`
-  ${({ theme }) => css`
-    position: absolute;
-    padding: 10px 5vw;
-    left: 60px;
-    top: 200px;
-    border-radius: 10px;
+  ${() => css`
     display: flex;
+    justify-content: center;
+
     img {
       border-radius: 10px;
     }

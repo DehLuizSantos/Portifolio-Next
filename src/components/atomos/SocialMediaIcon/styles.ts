@@ -11,6 +11,10 @@ export const SocialMediaIconContainer = styled.div`
     align-items: center;
     justify-content: center;
 
+    :hover {
+      opacity: 0.5;
+    }
+
     a {
       width: 20px;
       height: 20px;

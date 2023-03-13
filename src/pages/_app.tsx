@@ -7,13 +7,10 @@ import { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [open, setOpen] = useState(false);
-
   return (
     <ThemeProvider theme={theme}>
-      <Header setOpen={setOpen} open={open} />
+      <Header />
       <Component {...pageProps} />
-      <Footer />
       <GlobalStyle />
     </ThemeProvider>
   );

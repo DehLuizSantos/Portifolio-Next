@@ -1,5 +1,6 @@
 import { PresentationPhoto } from '@/components/molecules/PresentationPhoto';
-import { PresentationSocialMedia } from '@/components/molecules/PresentationSocialMedia';
+import { PresentationSocialMedia } from '@/components/organisms/PresentationSocialMedia';
+import { WavesBackground } from '@/components/molecules/WavesBackground';
 import Head from 'next/head';
 import * as S from './styles';
 
@@ -12,11 +13,11 @@ export const Home = () => {
         <link rel="icon" href="/Logo.svg" />
       </Head>
       <S.HomeContainer>
-        <div className="wave"></div>
-        <div className="wave"></div>
-        <div className="wave"></div>
-        <PresentationPhoto />
-        <PresentationSocialMedia />
+        <div className="presentation">
+          <PresentationPhoto />
+          <PresentationSocialMedia />
+        </div>
+        <WavesBackground />
       </S.HomeContainer>
     </>
   );

@@ -1,5 +1,6 @@
 import { Button } from '@/components/atomos/Button';
 import { SocialMediaIcon } from '@/components/atomos/SocialMediaIcon';
+import { FontH2, FontH3 } from '@/styles/fonts';
 import * as S from './styles';
 
 export const PresentationSocialMedia = () => {
@@ -32,13 +33,12 @@ export const PresentationSocialMedia = () => {
             name={socialMedia.name}
           />
         ))}
-
-        <Button> exemplo</Button>
       </S.SocialMediaButton>
 
       <S.TitlePresentation>
-        <h2>André Luiz</h2>
-        <h3>Software Develop</h3>
+        <FontH2>André Luiz</FontH2>
+        <FontH3>Software Develop</FontH3>
+        <Button>Download CV</Button>
       </S.TitlePresentation>
     </S.PresentationSocialMediaContainer>
   );
